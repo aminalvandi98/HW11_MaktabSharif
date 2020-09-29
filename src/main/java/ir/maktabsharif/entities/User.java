@@ -17,6 +17,8 @@ public class User {
     private String password;
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Role role;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Adrress adrress;
 
     public int getId() {
         return id;
@@ -64,5 +66,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Adrress getAdrress() {
+        return adrress;
+    }
+
+    public void setAdrress(Adrress adrress) {
+        this.adrress = adrress;
     }
 }

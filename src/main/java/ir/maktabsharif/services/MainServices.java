@@ -1,9 +1,6 @@
 package ir.maktabsharif.services;
 
-import ir.maktabsharif.entities.Article;
-import ir.maktabsharif.entities.Role;
-import ir.maktabsharif.entities.Tag;
-import ir.maktabsharif.entities.User;
+import ir.maktabsharif.entities.*;
 import ir.maktabsharif.repository.ArticleRepository;
 import ir.maktabsharif.repository.Repository;
 import ir.maktabsharif.repository.RoleRepository;
@@ -38,6 +35,18 @@ public class MainServices {
         Date date = new Date();
         date = simpleDateFormat.parse(birthday);
         user.setBirthday(simpleDateFormat.format(date));
+
+        Adrress adrress = new Adrress();
+        System.out.print("Enter country: ");
+        adrress.setCountry(new Scanner(System.in).next());
+        System.out.print("Enter state: ");
+        adrress.setState(new Scanner(System.in).next());
+        System.out.print("Enter city: ");
+        adrress.setCity(new Scanner(System.in).next());
+        System.out.print("street Address: ");
+        adrress.setStreetAddress(new Scanner(System.in).next());
+        user.setAdrress(adrress);
+
 
         System.out.print("User Name:");
         user.setUsername(scanner.next());
